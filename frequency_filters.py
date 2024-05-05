@@ -32,9 +32,10 @@ class FrequencyFilters:
         return format_image(mean_image)
 
     @staticmethod
-    def edge_preserving_filter(self, src: str):
+    def edge_preserving_filter(src: str):
         image = cv2.imread(src)
+        converted_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
-        domain_filtered_image = cv2.edgePreservingFilter(image, flags=1, sigma_s=60, sigma_r=0.6)
+        domain_filtered_image = cv2.edgePreservingFilter(converted_image, flags=1, sigma_s=60, sigma_r=0.6)
 
         return format_image(domain_filtered_image)

@@ -29,14 +29,20 @@ class UserInterface(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
-        self.ui.mean_filter_button.clicked.connect(self.process)
-        self.ui.upload_before_image.clicked.connect(self.load_image)
+        self.ui.mean_filter_process_button.clicked.connect(self.process_mean_filter)
+        self.ui.edge_preserving_filter_process_button.clicked.connect(self.process_edge_preserving_filter)
 
-        self.ui.image_before_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignHCenter | QtCore.Qt.AlignmentFlag.AlignVCenter)
-        self.ui.image_after_label.setAlignment(QtCore.Qt.AlignmentFlag.AlignHCenter | QtCore.Qt.AlignmentFlag.AlignVCenter)
+        self.ui.upload_before_image_button.clicked.connect(self.load_image)
+
+        self.ui.image_before_label.setAlignment(
+            QtCore.Qt.AlignmentFlag.AlignHCenter | QtCore.Qt.AlignmentFlag.AlignVCenter
+        )
+        self.ui.image_after_label.setAlignment(
+            QtCore.Qt.AlignmentFlag.AlignHCenter | QtCore.Qt.AlignmentFlag.AlignVCenter
+        )
 
         self.image_width = self.ui.image_before_label.width()
-        self.image_height = self.ui.image_before_label.height()
+        self.image_height = self.ui.image_after_label.height()
 
         self.image_src = None
 
@@ -66,8 +72,13 @@ class UserInterface(QMainWindow):
 
         self.ui.image_before_label.setPixmap(pixmap.scaled(self.image_width, self.image_height))
 
-    def process(self):
+    def process_mean_filter(self):
         image = FrequencyFilters.process_mean_filter(self.image_src)
+
+        self.print_image(image)
+
+    def process_edge_preserving_filter(self):
+        image = FrequencyFilters.edge_preserving_filter(self.image_src)
 
         self.print_image(image)
 
