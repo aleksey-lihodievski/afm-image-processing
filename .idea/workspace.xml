@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db1e0a44-85c3-48b3-b583-e12f35a9c243" name="Changes" comment=".idea files">
+    <list default="true" id="db1e0a44-85c3-48b3-b583-e12f35a9c243" name="Changes" comment="intermediate ui">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frequency_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/frequency_filters.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generated/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/generated/main_window.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/main_window.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/main_window.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface.py" afterDir="false" />
     </list>
@@ -50,6 +49,11 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.updates&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tmp" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Diploma" />
@@ -127,7 +131,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714938579159</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="intermediate ui">
+      <option name="closed" value="true" />
+      <created>1715692078914</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715692078914</updated>
+    </task>
+    <task id="LOCAL-00004" summary="intermediate ui">
+      <option name="closed" value="true" />
+      <created>1715692312010</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715692312010</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,6 +164,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: new layout" />
     <MESSAGE value=".idea files" />
-    <option name="LAST_COMMIT_MESSAGE" value=".idea files" />
+    <MESSAGE value="intermediate ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="intermediate ui" />
   </component>
 </project>

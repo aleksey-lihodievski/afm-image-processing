@@ -1,5 +1,3 @@
-# from typing import Any
-
 import cv2
 from PyQt6.QtCore import QDir
 from PySide6 import QtCore
@@ -7,10 +5,8 @@ from PySide6.QtCore import QSize
 from PySide6.QtGui import QPixmap
 from PySide6.QtWidgets import QMainWindow, QFileDialog
 from cv2.typing import MatLike
-# from cv2 import Mat
-# from numpy import ndarray, dtype, generic
 
-from frequency_filters import FrequencyFilters, format_image
+from frequency_filters import FrequencyFilters
 from generated.main_window import Ui_MainWindow
 
 
@@ -74,17 +70,8 @@ class UserInterface(QMainWindow):
             self.image_width = round(label_width)
             self.image_height = round(label_width / img_width * img_height)
         else:
-            print('fuck??')
-            # here is the bug with glitch
-            # layout by height
-            # label_height -= 50
-
             self.image_width = round(label_height / img_height * img_width)
             self.image_height = round(label_height)
-
-            # works without glitches ??
-            # self.image_width = 500
-            # self.image_height = 500
 
         self.image_src = filename[0]
 
@@ -107,27 +94,14 @@ class UserInterface(QMainWindow):
 
         self.print_image(image)
 
-    def print_image(self, image: MatLike): # Mat | ndarray[Any, dtype[generic]] | ndarray
-        size = QSize(self.image_width, self.image_height)
-        # size = self.ui.image_before_label.size()
-        # size = QSize(100, 100)
-
+    def print_image(self, image: MatLike):
+        tmp_path = 'tmp/tmp.jpg'
         self.processed_image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
-        # resized = cv2.resize(image, (self.image_width, self.image_height))
+        cv2.imwrite(tmp_path, self.processed_image)
 
-        # q_image = format_image(image).scaled(size)
-        q_image = format_image(image) # .scaled(size)
+        pixmap = QPixmap()
+        pixmap.load(tmp_path)
 
-        pixmap = QPixmap.fromImage(q_image) # .scaled(self.ui.image_before_label.size(), QtCore.Qt.AspectRatioMode.KeepAspectRatio)
-
-        # qimage = QImage(rgb.data, rgb.shape[1], rgb.shape[0], QImage.Format_RGB888)
-        # pixmap = QPixmap.fromImage(qimage)
-
-        print(
-            q_image.size(),
-            self.ui.image_before_label.size(),
-            self.image_width,
-            self.image_height
+        self.ui.image_after_label.setPixmap(
+            pixmap.scaled(self.image_width, self.image_height)
         )
-        self.ui.image_after_label.setPixmap(pixmap)
-        # self.ui.image_after_label.setPixmap(self.ui.image_before_label.pixmap())
