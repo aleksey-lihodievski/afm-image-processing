@@ -30,24 +30,27 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setEnabled(True)
         self.verticalLayout_2 = QVBoxLayout(self.centralwidget)
+        self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.groupBox_3 = QGroupBox(self.centralwidget)
         self.groupBox_3.setObjectName(u"groupBox_3")
-        sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.MinimumExpanding)
+        sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(1)
         sizePolicy.setVerticalStretch(1)
         sizePolicy.setHeightForWidth(self.groupBox_3.sizePolicy().hasHeightForWidth())
         self.groupBox_3.setSizePolicy(sizePolicy)
         self.groupBox_3.setStyleSheet(u"QLabel {\n"
 "	border: 1px solid white;\n"
+"	width: 50%;\n"
 "}")
+        self.groupBox_3.setFlat(True)
         self.horizontalLayout = QHBoxLayout(self.groupBox_3)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.image_before_label = QLabel(self.groupBox_3)
         self.image_before_label.setObjectName(u"image_before_label")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
-        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Minimum)
+        sizePolicy1.setHorizontalStretch(1)
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.image_before_label.sizePolicy().hasHeightForWidth())
         self.image_before_label.setSizePolicy(sizePolicy1)
@@ -68,7 +71,14 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addWidget(self.groupBox_3)
 
-        self.upload_before_image_button = QPushButton(self.centralwidget)
+        self.groupBox = QGroupBox(self.centralwidget)
+        self.groupBox.setObjectName(u"groupBox")
+        self.groupBox.setAutoFillBackground(False)
+        self.groupBox.setFlat(True)
+        self.horizontalLayout_2 = QHBoxLayout(self.groupBox)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.upload_before_image_button = QPushButton(self.groupBox)
         self.upload_before_image_button.setObjectName(u"upload_before_image_button")
         self.upload_before_image_button.setEnabled(True)
         sizePolicy2 = QSizePolicy(QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Fixed)
@@ -76,10 +86,23 @@ class Ui_MainWindow(object):
         sizePolicy2.setVerticalStretch(0)
         sizePolicy2.setHeightForWidth(self.upload_before_image_button.sizePolicy().hasHeightForWidth())
         self.upload_before_image_button.setSizePolicy(sizePolicy2)
-        self.upload_before_image_button.setFocusPolicy(Qt.FocusPolicy.ClickFocus)
+        self.upload_before_image_button.setFocusPolicy(Qt.FocusPolicy.TabFocus)
         self.upload_before_image_button.setStyleSheet(u"")
 
-        self.verticalLayout_2.addWidget(self.upload_before_image_button)
+        self.horizontalLayout_2.addWidget(self.upload_before_image_button)
+
+        self.save_after_image_button = QPushButton(self.groupBox)
+        self.save_after_image_button.setObjectName(u"save_after_image_button")
+        self.save_after_image_button.setEnabled(True)
+        sizePolicy2.setHeightForWidth(self.save_after_image_button.sizePolicy().hasHeightForWidth())
+        self.save_after_image_button.setSizePolicy(sizePolicy2)
+        self.save_after_image_button.setFocusPolicy(Qt.FocusPolicy.TabFocus)
+        self.save_after_image_button.setStyleSheet(u"")
+
+        self.horizontalLayout_2.addWidget(self.save_after_image_button)
+
+
+        self.verticalLayout_2.addWidget(self.groupBox)
 
         self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
 
@@ -142,11 +165,13 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"AFM processing", None))
         self.groupBox_3.setTitle("")
         self.image_before_label.setText("")
         self.image_after_label.setText("")
+        self.groupBox.setTitle("")
         self.upload_before_image_button.setText(QCoreApplication.translate("MainWindow", u"Upload image", None))
+        self.save_after_image_button.setText(QCoreApplication.translate("MainWindow", u"Save image", None))
         self.mean_filter_process_button.setText(QCoreApplication.translate("MainWindow", u"Process", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_1), QCoreApplication.translate("MainWindow", u"Mean filter", None))
         self.edge_preserving_filter_process_button.setText(QCoreApplication.translate("MainWindow", u"Process", None))
