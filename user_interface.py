@@ -1,10 +1,11 @@
+import inspect
 import os
 import shutil
 
 import cv2
 from PyQt6.QtCore import QDir
 from PySide6.QtCore import QSize, Qt
-from PySide6.QtGui import QPixmap, QImage, QValidator, QIntValidator, QDoubleValidator
+from PySide6.QtGui import QPixmap, QIntValidator, QDoubleValidator
 from PySide6.QtWidgets import QMainWindow, QFileDialog
 from cv2.typing import MatLike
 
@@ -40,8 +41,8 @@ class UserInterface(QMainWindow):
 
         self.ui.clahe_clip_limit_input.setValidator(int_validator)
 
-        self.ui.edge_preserving_filter_smoothing_k_input.setValidator(int_validator)
-        self.ui.edge_preserving_filter_edging_k_input.setValidator(double_validator)
+        self.ui.edge_preserving_filter_sigma_color_k_input.setValidator(double_validator)
+        self.ui.edge_preserving_filter_sigma_space_k_input.setValidator(double_validator)
 
         self.tmp_output_file_path = 'tmp/output.jpg'
         self.tmp_applied_file_path = 'tmp/applied.jpg'
@@ -152,11 +153,12 @@ class UserInterface(QMainWindow):
         self.print_image(image)
 
     def process_edge_preserving_filter(self):
-        smoothing = int(self.ui.edge_preserving_filter_smoothing_k_input.text())
-        edging = float(self.ui.edge_preserving_filter_edging_k_input.text().replace(",", "."))
+        size = int(self.ui.edge_preserving_filter_matrix_size_input.text())
+        sigma_color = float(self.ui.edge_preserving_filter_sigma_color_k_input.text())
+        sigma_space = float(self.ui.edge_preserving_filter_sigma_space_k_input.text().replace(",", "."))
 
         QMainWindow.setCursor(self, Qt.CursorShape.WaitCursor)
-        image = SpatialFilters.edge_preserving_filter(self.tmp_output_file_path, smoothing, edging)
+        image = SpatialFilters.edge_preserving_filter(self.tmp_output_file_path, sigma_color, sigma_space, size)
         QMainWindow.setCursor(self, Qt.CursorShape.ArrowCursor)
 
         self.print_image(image)
@@ -207,8 +209,6 @@ class UserInterface(QMainWindow):
     def process_canny(self):
         min_tresh = float(self.ui.canny_min_treshold_input.text())
         max_tresh = float(self.ui.canny_max_treshold_input.text())
-
-        print(min_tresh, max_tresh, type(min_tresh))
 
         QMainWindow.setCursor(self, Qt.CursorShape.WaitCursor)
         image = SpatialFilters.canny_edge_filter(self.tmp_output_file_path, min_tresh, max_tresh)

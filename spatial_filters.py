@@ -1,18 +1,6 @@
 import cv2
 import numpy as np
-# from PySide6.QtGui import QImage
 
-
-# def format_image(image: cv2.typing.MatLike):
-#     qformat = QImage.Format.Format_Indexed8
-#
-#     if len(image.shape) == 3:
-#         if (image.shape[2]) == 4:
-#             qformat = QImage.Format.Format_RGBA8888
-#         else:
-#             qformat = QImage.Format.Format_RGB888
-#
-#     return QImage(image.data, image.shape[1], image.shape[0], qformat)
 
 class SpatialFilters:
     @staticmethod
@@ -27,12 +15,11 @@ class SpatialFilters:
         return mean_image
 
     @staticmethod
-    def edge_preserving_filter(src: str, smoothing: int, edging: float):
+    def edge_preserving_filter(src: str, sigma_color: float, sigma_space: float, matrix_size: int):
         image = cv2.imread(src, cv2.IMREAD_GRAYSCALE)
         converted_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
-        # domain_filtered_image = cv2.edgePreservingFilter(converted_image, flags=1, sigma_s=60, sigma_r=0.6)
-        domain_filtered_image = cv2.edgePreservingFilter(converted_image, flags=1, sigma_s=smoothing, sigma_r=edging)
+        domain_filtered_image = cv2.bilateralFilter(converted_image, matrix_size, sigma_color, sigma_space)
 
         return domain_filtered_image
 
@@ -50,7 +37,6 @@ class SpatialFilters:
         image = cv2.imread(src, cv2.IMREAD_GRAYSCALE)
         converted_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
-        # canny = cv2.Canny(converted_image, 85, 255, 3)
-        canny = cv2.Canny(converted_image, min_treshold, max_treshold, 3)
+        canny = cv2.Canny(converted_image, min_treshold, max_treshold)
 
         return canny

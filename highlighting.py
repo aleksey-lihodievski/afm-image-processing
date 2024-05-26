@@ -1,5 +1,4 @@
 import cv2
-import numpy as np
 
 
 def calculate_z_by_x_and_y(x: int, y: int, a: int, b: int, c: int):

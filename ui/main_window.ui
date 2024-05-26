@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>2560</width>
-    <height>1313</height>
+    <width>1440</width>
+    <height>900</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -433,7 +433,7 @@
       </widget>
       <widget class="QWidget" name="edge_preserving">
        <attribute name="title">
-        <string>Edge preserving</string>
+        <string>Bilateral filter</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
@@ -487,12 +487,12 @@
                  </sizepolicy>
                 </property>
                 <property name="text">
-                 <string>Smoothing</string>
+                 <string>Sigma color</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QLineEdit" name="edge_preserving_filter_smoothing_k_input">
+               <widget class="QLineEdit" name="edge_preserving_filter_sigma_color_k_input">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                   <horstretch>0</horstretch>
@@ -500,7 +500,7 @@
                  </sizepolicy>
                 </property>
                 <property name="text">
-                 <string>10</string>
+                 <string>75</string>
                 </property>
                </widget>
               </item>
@@ -531,14 +531,52 @@
               <item>
                <widget class="QLabel" name="label_16">
                 <property name="text">
-                 <string>Edge Preserving (0-1)</string>
+                 <string>Sigma space</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QLineEdit" name="edge_preserving_filter_edging_k_input">
+               <widget class="QLineEdit" name="edge_preserving_filter_sigma_space_k_input">
                 <property name="text">
-                 <string>0,15</string>
+                 <string>75</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="groupBox_8">
+             <property name="title">
+              <string/>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_22">
+              <property name="leftMargin">
+               <number>0</number>
+              </property>
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <property name="rightMargin">
+               <number>0</number>
+              </property>
+              <property name="bottomMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="label_17">
+                <property name="text">
+                 <string>Matrix Edge Size</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="edge_preserving_filter_matrix_size_input">
+                <property name="text">
+                 <string>15</string>
                 </property>
                </widget>
               </item>

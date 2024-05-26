@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db1e0a44-85c3-48b3-b583-e12f35a9c243" name="Changes" comment="feat: ultimate fix">
-      <change afterPath="$PROJECT_DIR$/flat_normalizations.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/highlighting.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/histogram_equalizations.py" afterDir="false" />
+    <list default="true" id="db1e0a44-85c3-48b3-b583-e12f35a9c243" name="Changes" comment="feat: added filters with inputs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frequency_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/spatial_filters.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flat_normalizations.py" beforeDir="false" afterPath="$PROJECT_DIR$/flat_normalizations.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/generated/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/generated/main_window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/highlighting.py" beforeDir="false" afterPath="$PROJECT_DIR$/highlighting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spatial_filters.py" beforeDir="false" afterPath="$PROJECT_DIR$/spatial_filters.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/main_window.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/main_window.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_interface.py" afterDir="false" />
     </list>
@@ -52,7 +51,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Python.main.executor": "Run",
+    "Python.main.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Shell Script.uic-all.zsh.executor": "Run",
     "git-widget-placeholder": "main",
@@ -169,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715698558455</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat: added filters with inputs">
+      <option name="closed" value="true" />
+      <created>1716153088647</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716153088647</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -188,6 +195,7 @@
     <MESSAGE value=".idea files" />
     <MESSAGE value="intermediate ui" />
     <MESSAGE value="feat: ultimate fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: ultimate fix" />
+    <MESSAGE value="feat: added filters with inputs" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: added filters with inputs" />
   </component>
 </project>

@@ -24,7 +24,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(2560, 1313)
+        MainWindow.resize(1440, 900)
         MainWindow.setDockNestingEnabled(True)
         MainWindow.setUnifiedTitleAndToolBarOnMac(False)
         self.centralwidget = QWidget(MainWindow)
@@ -260,15 +260,15 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_23.addWidget(self.label_11)
 
-        self.edge_preserving_filter_smoothing_k_input = QLineEdit(self.groupBox_23)
-        self.edge_preserving_filter_smoothing_k_input.setObjectName(u"edge_preserving_filter_smoothing_k_input")
+        self.edge_preserving_filter_sigma_color_k_input = QLineEdit(self.groupBox_23)
+        self.edge_preserving_filter_sigma_color_k_input.setObjectName(u"edge_preserving_filter_sigma_color_k_input")
         sizePolicy5 = QSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Fixed)
         sizePolicy5.setHorizontalStretch(0)
         sizePolicy5.setVerticalStretch(0)
-        sizePolicy5.setHeightForWidth(self.edge_preserving_filter_smoothing_k_input.sizePolicy().hasHeightForWidth())
-        self.edge_preserving_filter_smoothing_k_input.setSizePolicy(sizePolicy5)
+        sizePolicy5.setHeightForWidth(self.edge_preserving_filter_sigma_color_k_input.sizePolicy().hasHeightForWidth())
+        self.edge_preserving_filter_sigma_color_k_input.setSizePolicy(sizePolicy5)
 
-        self.verticalLayout_23.addWidget(self.edge_preserving_filter_smoothing_k_input)
+        self.verticalLayout_23.addWidget(self.edge_preserving_filter_sigma_color_k_input)
 
 
         self.horizontalLayout_7.addWidget(self.groupBox_23)
@@ -284,13 +284,32 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_21.addWidget(self.label_16)
 
-        self.edge_preserving_filter_edging_k_input = QLineEdit(self.groupBox_7)
-        self.edge_preserving_filter_edging_k_input.setObjectName(u"edge_preserving_filter_edging_k_input")
+        self.edge_preserving_filter_sigma_space_k_input = QLineEdit(self.groupBox_7)
+        self.edge_preserving_filter_sigma_space_k_input.setObjectName(u"edge_preserving_filter_sigma_space_k_input")
 
-        self.verticalLayout_21.addWidget(self.edge_preserving_filter_edging_k_input)
+        self.verticalLayout_21.addWidget(self.edge_preserving_filter_sigma_space_k_input)
 
 
         self.horizontalLayout_7.addWidget(self.groupBox_7)
+
+        self.groupBox_8 = QGroupBox(self.groupBox_25)
+        self.groupBox_8.setObjectName(u"groupBox_8")
+        self.groupBox_8.setFlat(True)
+        self.verticalLayout_22 = QVBoxLayout(self.groupBox_8)
+        self.verticalLayout_22.setObjectName(u"verticalLayout_22")
+        self.verticalLayout_22.setContentsMargins(0, 0, 0, 0)
+        self.label_17 = QLabel(self.groupBox_8)
+        self.label_17.setObjectName(u"label_17")
+
+        self.verticalLayout_22.addWidget(self.label_17)
+
+        self.edge_preserving_filter_matrix_size_input = QLineEdit(self.groupBox_8)
+        self.edge_preserving_filter_matrix_size_input.setObjectName(u"edge_preserving_filter_matrix_size_input")
+
+        self.verticalLayout_22.addWidget(self.edge_preserving_filter_matrix_size_input)
+
+
+        self.horizontalLayout_7.addWidget(self.groupBox_8)
 
 
         self.verticalLayout_4.addWidget(self.groupBox_25)
@@ -641,13 +660,16 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.mean_filter), QCoreApplication.translate("MainWindow", u"Mean filter", None))
         self.groupBox_25.setTitle("")
         self.groupBox_23.setTitle("")
-        self.label_11.setText(QCoreApplication.translate("MainWindow", u"Smoothing", None))
-        self.edge_preserving_filter_smoothing_k_input.setText(QCoreApplication.translate("MainWindow", u"10", None))
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"Sigma color", None))
+        self.edge_preserving_filter_sigma_color_k_input.setText(QCoreApplication.translate("MainWindow", u"75", None))
         self.groupBox_7.setTitle("")
-        self.label_16.setText(QCoreApplication.translate("MainWindow", u"Edge Preserving (0-1)", None))
-        self.edge_preserving_filter_edging_k_input.setText(QCoreApplication.translate("MainWindow", u"0,15", None))
+        self.label_16.setText(QCoreApplication.translate("MainWindow", u"Sigma space", None))
+        self.edge_preserving_filter_sigma_space_k_input.setText(QCoreApplication.translate("MainWindow", u"75", None))
+        self.groupBox_8.setTitle("")
+        self.label_17.setText(QCoreApplication.translate("MainWindow", u"Matrix Edge Size", None))
+        self.edge_preserving_filter_matrix_size_input.setText(QCoreApplication.translate("MainWindow", u"15", None))
         self.edge_preserving_filter_process_button.setText(QCoreApplication.translate("MainWindow", u"Process", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.edge_preserving), QCoreApplication.translate("MainWindow", u"Edge preserving", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.edge_preserving), QCoreApplication.translate("MainWindow", u"Bilateral filter", None))
         self.label_15.setText(QCoreApplication.translate("MainWindow", u"Edge Size should only be even due to algorithm speciefics", None))
         self.groupBox_6.setTitle("")
         self.groupBox_27.setTitle("")
