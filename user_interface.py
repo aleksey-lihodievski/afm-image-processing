@@ -1,13 +1,10 @@
-import inspect
 import os
 import shutil
 
 import cv2
-from PyQt6.QtCore import QDir
-from PySide6.QtCore import QSize, Qt
+from PySide6.QtCore import QSize, Qt, QDir
 from PySide6.QtGui import QPixmap, QIntValidator, QDoubleValidator
 from PySide6.QtWidgets import QMainWindow, QFileDialog
-from cv2.typing import MatLike
 
 from flat_normalizations import FlatNormalizations
 from highlighting import Highlighting
@@ -221,7 +218,7 @@ class UserInterface(QMainWindow):
         cv2.imwrite(self.tmp_output_file_path, img)
         self.ui.apply_button.setEnabled(False)
 
-    def print_image(self, image: MatLike):
+    def print_image(self, image):
         self.processed_image = image
 
         # this intermediate image fixes the bug,
