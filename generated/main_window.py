@@ -24,7 +24,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1440, 900)
+        MainWindow.resize(1440, 778)
         MainWindow.setDockNestingEnabled(True)
         MainWindow.setUnifiedTitleAndToolBarOnMac(False)
         self.centralwidget = QWidget(MainWindow)
@@ -657,7 +657,7 @@ class Ui_MainWindow(object):
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"Matrix Edge Size", None))
         self.mean_filter_edge_size_input.setText(QCoreApplication.translate("MainWindow", u"10", None))
         self.mean_filter_process_button.setText(QCoreApplication.translate("MainWindow", u"Process", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.mean_filter), QCoreApplication.translate("MainWindow", u"Mean filter", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.mean_filter), QCoreApplication.translate("MainWindow", u"Averaging filter", None))
         self.groupBox_25.setTitle("")
         self.groupBox_23.setTitle("")
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"Sigma color", None))

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1440</width>
-    <height>900</height>
+    <height>778</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -345,7 +345,7 @@
       </widget>
       <widget class="QWidget" name="mean_filter">
        <attribute name="title">
-        <string>Mean filter</string>
+        <string>Averaging filter</string>
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
